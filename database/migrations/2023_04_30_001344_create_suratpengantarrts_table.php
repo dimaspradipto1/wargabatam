@@ -16,8 +16,10 @@ class CreateSuratpengantarrtsTable extends Migration
         Schema::create('suratpengantarrts', function (Blueprint $table) {
             $table->id();
             $table->string('no_surat');
+            $table->string('nama_rt');
+            $table->string('nama_rw');
             $table->bigInteger('warga_id');
-            $table->bigInteger('kartu_keluarga_id');
+            $table->string('warga_nama');
             $table->bigInteger('keperluan_id');
             
             $table->timestamps();
