@@ -13,6 +13,6 @@ class Pendidikan extends Model
 
     public function warga()
     {
-        return $this->hasMany(Warga::class);
+        return $this->hasMany(Warga::class, 'pendidikan_id', 'id');
     }
 }

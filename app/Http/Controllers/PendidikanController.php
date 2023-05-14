@@ -90,7 +90,7 @@ class PendidikanController extends Controller
     {
         $pendidikan->update($request->all());
         alert()->success('Berhasil', 'Data berhasil diubah.')->showConfirmButton('OK', '#218838');
-        return redirect('pendidikan');
+        return redirect ('pendidikan');
     }
 
     /**

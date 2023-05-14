@@ -17,7 +17,7 @@ class CreateKartukeluargasTable extends Migration
             $table->id();
 
             $table->string('no_kk');
-            $table->bigInteger('kepala_keluarga');
+            $table->string('kepala_keluarga');
             $table->string('alamat');
             $table->string('rt');
             $table->string('rw');

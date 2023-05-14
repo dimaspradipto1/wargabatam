@@ -3,7 +3,8 @@
 @section('content')
   <div class="card shadow mb-4 col-12">
     <div class="card-header">
-      <a href="/kelahiran" class="btn btn-warning text-white"><i class="bi bi-box-arrow-left"></i> Kembali</a>
+      <a href="{{ route('kelahiran.index') }}" class="btn btn-warning text-white"><i class="bi bi-box-arrow-left"></i>
+        Kembali</a>
     </div>
     <div class="card-body">
       <h5 class="card-title">Form Edit Nama Bayi</h5>

@@ -31,7 +31,7 @@
           <div class="col-sm-10">
             <select name="role" class="form-control">
               <option value="admin" @if ($user->role == 'admin') selected @endif>admin</option>
-              <option value="rt" @if ($user->rt == 'user') selected @endif>rt</option>
+              <option value="rt" @if ($user->rt == 'rt') selected @endif>rt</option>
               <option value="warga" @if ($user->warga == 'warga') selected @endif>warga</option>
             </select>
           </div>

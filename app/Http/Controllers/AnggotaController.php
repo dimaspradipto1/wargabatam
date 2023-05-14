@@ -59,7 +59,7 @@ class AnggotaController extends Controller
 
         alert()->success('Sukses','Data Berhasil Disimpan')->showConfirmButton('OK', '#218838')->autoclose('2000');
        
-        return redirect('kartukeluarga.anggota.index', $kartukeluarga->id);
+        return redirect()->route('kartukeluarga.anggota.index', $kartukeluarga->id);
     
     }
 

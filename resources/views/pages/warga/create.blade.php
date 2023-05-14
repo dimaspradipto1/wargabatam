@@ -3,7 +3,8 @@
 @section('content')
   <div class="card shadow mb-4 col-12">
     <div class="card-header">
-      <a href="/warga" class="btn btn-warning text-white"><i class="bi bi-box-arrow-left"></i> Kembali</a>
+      <a href="{{ route('warga.index') }}" class="btn btn-warning text-white"><i class="bi bi-box-arrow-left"></i>
+        Kembali</a>
     </div>
     <div class="card-body">
       <h5 class="card-title">Form Tambah Warga</h5>
@@ -66,12 +67,12 @@
         <div class="row mb-3">
           <label for="inputText" class="col-sm-2 col-form-label">RT/RW</label>
           <div class="col-sm-5 mb-3">
-            <input type="text" name="rt" value="{{ old('rt') }}" class="form-control" placeholder="001"
+            <input type="number" name="rt" value="{{ old('rt') }}" class="form-control" placeholder="001"
               required>
             <div class="invalid-feedback">Masukkan RT Kamu!!!</div>
           </div>
           <div class="col-sm-5">
-            <input type="text" name="rw" value="{{ old('rw') }}" class="form-control" placeholder="001"
+            <input type="number" name="rw" value="{{ old('rw') }}" class="form-control" placeholder="001"
               required>
             <div class="invalid-feedback">Masukkan RW Kamu!!!</div>
           </div>

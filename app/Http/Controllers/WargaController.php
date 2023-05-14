@@ -15,15 +15,15 @@ class WargaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Pendidikan $pendidikan, Pekerjaan $pekerjaan)
     {
         $data=[
             'title'=>'Data Warga',
             'menu'=>'WARGA',
             'breadcrumb'=>'Warga',
             'warga'=>Warga::all(),
-            'pekerjaan'=>Pekerjaan::all(),
-            'pendidikan'=>Pendidikan::all(),
+            'pekerjaan'=>$pekerjaan,
+            'pendidikan'=>$pendidikan,
         ];
         return view('pages.warga.index', $data);
     }

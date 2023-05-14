@@ -3,7 +3,8 @@
 @section('content')
   <div class="card shadow mb-4 col-12">
     <div class="card-header">
-      <a href="/suratpengantarrt" class="btn btn-warning text-white"><i class="bi bi-box-arrow-left"></i> Kembali</a>
+      <a href="{{ route('suratpengantarrt.index') }}" class="btn btn-warning text-white"><i class="bi bi-box-arrow-left"></i>
+        Kembali</a>
     </div>
     <div class="card-body">
       <h5 class="card-title">Form Pengajuan Surat Penngantar RT</h5>
@@ -16,7 +17,7 @@
           <div class="row mb-3">
             <label for="inputText" class="col-sm-2 col-form-label">Nomor Surat</label>
             <div class="col-sm-10">
-              <input type="text" name="no_surat" value="{{ old('nno_surat') }}" placeholder="Masukkan nomor surat"
+              <input type="number" name="no_surat" value="{{ old('no_surat') }}" placeholder="Masukkan nomor surat"
                 class="form-control">
               <div class="invalid-feedback">Masukkan Nomor Surat!!!</div>
             </div>
@@ -59,6 +60,7 @@
               <option selected>-- Pilih Warga --</option>
               @foreach ($warga as $w)
                 <option value="{{ $w->nama }}">{{ $w->nama }}</option>
+                {{-- <option value="{{ $w->id }}">{{ $w->nama }}</option> --}}
               @endforeach
             </select>
           </div>

@@ -16,7 +16,8 @@ class CreateAnggotasTable extends Migration
         Schema::create('anggotas', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('kartukeluarga_id');
+            // $table->bigInteger('kartukeluarga_id');
+            $table->foreignId('kartukeluarga_id')->constrained('kartukeluargas')->cascadeOnDelete()->cascadeOnUpdate();
             $table->bigInteger('warga_id');
             $table->string('status_hubungan');
 
