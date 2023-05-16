@@ -10,7 +10,7 @@
       <h5 class="card-title">Form Edit Kepala Keluarga</h5>
 
       <!-- General Form Elements -->
-      <form action="/kartukeluarga/{{ $kartukeluarga->id }}" method="POST" enctype="multipart/form-data">
+      <form action="{{route('kartukeluarga.update', $kartukeluarga->id) }}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
 

@@ -16,7 +16,7 @@ class CreateKelahiransTable extends Migration
         Schema::create('kelahirans', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('kartu_keluarga_id');
+            $table->foreignId('kartukeluarga_id')->constrained('kartukeluargas')->onDelete('cascade')->onUpdate('cascade');
             $table->string('nama_bayi');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');

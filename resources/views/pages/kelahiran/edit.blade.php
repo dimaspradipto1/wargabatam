@@ -10,7 +10,7 @@
       <h5 class="card-title">Form Edit Nama Bayi</h5>
 
       <!-- General Form Elements -->
-      <form action="/kelahiran/{{ $kelahiran->id }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('kelahiran.update',$kelahiran->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

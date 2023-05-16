@@ -3,14 +3,14 @@
 @section('content')
   <div class="card shadow mb-4 col-12">
     <div class="card-header">
-      <a href="/user" class="btn btn-warning text-white"><i class="bi bi-box-arrow-left"></i> Kembali</a>
+      <a href="{{ route('user.index') }}" class="btn btn-warning text-white"><i class="bi bi-box-arrow-left"></i> Kembali</a>
     </div>
     <div class="card-body">
       <h5 class="card-title">Form Tambah Pendidikan</h5>
 
       <!-- General Form Elements -->
-      <form action="/user/{{ $user->id }}" method="POST" enctype="multipart/form-data">
-        @method('PUT')
+      <form action="{{route ('user.update',$user->id) }}" method="POST" enctype="multipart/form-data">
+        @method('PUT') 
         @csrf
         <div class="row mb-3">
           <label for="inputText" class="col-sm-2 col-form-label">nama</label>

@@ -10,7 +10,7 @@
       <h5 class="card-title">Form Edit Warga Kematian</h5>
 
       <!-- General Form Elements -->
-      <form action="/kematian/{{ $kematian->id }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('kematian.update',$kematian->id) }}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
 

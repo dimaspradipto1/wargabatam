@@ -10,9 +10,9 @@
       <h5 class="card-title">Form Edit Pendatang</h5>
 
       <!-- General Form Elements -->
-      <form action="/suratpengantarrt/{{ $suratpengantarrt->id }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('suratpengantarrt.update',$suratpengantarrt->id) }}" method="POST" enctype="multipart/form-data">
         @method('PUT')
-        @csrf
+        @csrf 
 
         @if (Auth::user()->role == 'admin' || Auth::user()->role == 'rt')
           <div class="row mb-3">

@@ -12,8 +12,8 @@
             <tr>
               <th>No</th>
               <th>Nama </th>
-              <th>email </th>
-              <th>role </th>
+              <th>Email </th>
+              <th>Status </th>
               <th>Aksi</th>
             </tr>
           </thead>

@@ -10,7 +10,7 @@
       <h5 class="card-title">Form Edit Warga Pindah</h5>
 
       <!-- General Form Elements -->
-      <form action="/pindah/{{ $pindah->id }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('user.index',$pindah->id) }}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
 

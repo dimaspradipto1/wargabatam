@@ -10,7 +10,7 @@
       <h5 class="carad-title">Form Edit Pendatang</h5>
 
       <!-- General Form Elements -->
-      <form action="/pendatang/{{ $pendatang->id }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('pendatang.update',$pendatang->id )}}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
 
