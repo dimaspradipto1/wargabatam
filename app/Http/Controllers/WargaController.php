@@ -17,11 +17,14 @@ class WargaController extends Controller
      */
     public function index(Pendidikan $pendidikan, Pekerjaan $pekerjaan)
     {
+        $warga = Auth::user()->role == 'admin'  || Auth::user()->role == 'rt' ? Warga::all() : Warga::where('nama', Auth::user()->name)->get();
+
+
         $data=[
             'title'=>'Data Warga',
             'menu'=>'WARGA',
             'breadcrumb'=>'Warga',
-            'warga'=>Warga::all(),
+            'warga'=> $warga,
             'pekerjaan'=>$pekerjaan,
             'pendidikan'=>$pendidikan,
         ];
@@ -54,7 +57,7 @@ class WargaController extends Controller
     public function store(Request $request)
     {
         Warga::create($request->all());
-        alert()->success('Berhasil','Data Telah Ditambahkan')->showConfirmButton('confirm', '#218838');
+        alert()->success('Berhasil','Data Telah Ditambahkan')->showConfirmButton('OK', '#218838');
         return redirect('warga');
     }
 

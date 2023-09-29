@@ -15,9 +15,9 @@
             <tr>
               <th>No</th>
               <th>NO Surat</th>
-              <th>NIK</th>
+              {{-- <th>NIK</th> --}}
               <th>Nama Warga</th>
-              <th>Keperluan</th>
+              {{-- <th>Keperluan</th> --}}
               <th>cetak</th>
               @if (Auth::user()->role == 'admin' || Auth::user()->role == 'rt')
                 <th>Aksi</th>
@@ -30,9 +30,9 @@
                 <th>{{ $loop->iteration }}</th>
                 <th>{{ $rt->no_surat }}</th>
                 {{-- <th>{{ $rt->kartu_keluarga->no_kk }}</th> --}}
-                <th>{{ $rt->warga->nik }}</th>
+                {{-- <th>{{ $rt->warga->nik }}</th> --}}
                 <th>{{ $rt->warga_nama }}</th>
-                <th>{{ $rt->keperluan->keperluan }}</th>
+                {{-- <th>{{ $rt->keperluan->keperluan }}</th> --}}
 
                 <th>
                   <a href="{{ route('cetak_pdf', $rt->id) }}" class="btn btn-dark text-white my-2"><i

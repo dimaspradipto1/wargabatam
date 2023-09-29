@@ -67,7 +67,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link collapsed" href="{{ route('pendidikan.index') }}">
+          <a class="nav-link collapsed" href="{{ route('pekerjaan.index') }}">
             <i class="bi bi-building-fill"></i>
             <span>Pekerjaan</span>
           </a>

@@ -51,7 +51,7 @@
               <option value="Laki-Laki">Laki-Laki</option>
               <option value="Perempuan">Perempuan</option>
             </select>
-            <div class="invalid-feedback">Masukkan Tanggal Lahir Kamu!!!</div>
+            <div class="invalid-feedback">Masukkan Jenis kelamin Kamu!!!</div>
           </div>
         </div>
 

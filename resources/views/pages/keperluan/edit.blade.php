@@ -10,7 +10,7 @@
       <h5 class="card-title">Form Edit Keperluan Warga</h5>
 
       <!-- General Form Elements -->
-      <form action="/keperluan/{{route ('keperluan.update',$keperluan->id) }}" method="POST" enctype="multipart/form-data">
+      <form action="{{route ('keperluan.update',$keperluan->id) }}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
         <div class="row mb-3">

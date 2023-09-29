@@ -12,7 +12,7 @@
             <tr>
               <th>No</th>
               <th>Nama</th>
-              {{-- <th>NO HP</th> --}}
+              <th>NO HP</th>
               <th>Alamat</th>
               <th>RT</th>
               <th>RW</th>
@@ -29,7 +29,7 @@
               <tr>
                 <th>{{ $loop->iteration }}</th>
                 <th>{{ $w->nama }}</th>
-                {{-- <th>{{ $w->no_hp }}</th> --}}
+                <th>{{ $w->no_hp }}</th>
                 <th>{{ $w->alamat }}</th>
                 <th>{{ $w->rt }}</th>
                 <th>{{ $w->rw }}</th>
@@ -38,11 +38,12 @@
                 <th>
                   <a href="warga/{{ $w->id }}" class="btn btn-info text-white my-2"><i
                       class="bi bi-person"></i></a>
+                      <a href="warga/{{ $w->id }}/edit" class="btn btn-warning text-white my-2"><i
+                        class="bi bi-pencil"></i></a>
                 </th>
                 @if (Auth::user()->role == 'admin' || Auth::user()->role == 'rt')
                   <th>
-                    <a href="warga/{{ $w->id }}/edit" class="btn btn-warning text-white my-2"><i
-                        class="bi bi-pencil"></i></a>
+                   
                     <form action="warga/{{ $w->id }}" method="POST" class="d-inline">
                       @csrf
                       @method('delete')

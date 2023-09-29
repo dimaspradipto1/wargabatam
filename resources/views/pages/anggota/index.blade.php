@@ -15,13 +15,13 @@
         <label for="inputText" class="col-sm-2 col-form-label">Nomor KK | Kepala Keluarga</label>
         <div class="col-sm-5">
           <input type="number" name="no_kk" value="{{ old('no_kk') ?? $kartukeluarga->no_kk }}" class="form-control"
-            placeholder="nomor kartu keluarga" required>
+            placeholder="nomor kartu keluarga" readonly>
           <div class="invalid-feedback">Masukkan nomor KK!!!</div>
         </div>
         <div class="col-sm-5">
           <input type="text" name="kepala_keluarga"
             value="{{ old('kepala_keluarga') ?? $kartukeluarga->kepala_keluarga }}" class="form-control"
-            placeholder="kartu keluarga" required>
+            placeholder="kartu keluarga" readonly>
         </div>
       </div>
 
@@ -29,7 +29,7 @@
         <label for="inputText" class="col-sm-2 col-form-label">Alamat</label>
         <div class="col-sm-10">
           <input type="text" name="alamat" value="{{ old('alamat') ?? $kartukeluarga->alamat }}" placeholder="alamat"
-            class="form-control" required>
+            class="form-control" readonly>
           <div class="invalid-feedback">Masukkan Alamat Kamu!!!</div>
         </div>
       </div>
@@ -38,12 +38,12 @@
         <label for="inputText" class="col-sm-2 col-form-label">RT/RW</label>
         <div class="col-sm-5 mb-3">
           <input type="text" name="rt" value="{{ old('rt') ?? $kartukeluarga->rt }}" class="form-control"
-            placeholder="001" required>
+            placeholder="001" readonly>
           <div class="invalid-feedback">Masukkan RT Kamu!!!</div>
         </div>
         <div class="col-sm-5">
           <input type="text" name="rw" value="{{ old('rw') ?? $kartukeluarga->rw }}" class="form-control"
-            placeholder="001" required>
+            placeholder="001" readonly>
           <div class="invalid-feedback">Masukkan RW Kamu!!!</div>
         </div>
       </div>
@@ -52,12 +52,12 @@
         <label for="inputText" class="col-sm-2 col-form-label">Kelurahan</label>
         <div class="col-sm-5">
           <input type="text" name="kelurahan" value="{{ old('kelurahan') ?? $kartukeluarga->kelurahan }}"
-            placeholder="kelurahan" class="form-control" required>
+            placeholder="kelurahan" class="form-control" readonly>
           <div class="invalid-feedback">Masukkan kelurahan Kamu!!!</div>
         </div>
         <div class="col-sm-5">
           <input type="text" name="kecamatan" value="{{ old('kecamatan') ?? $kartukeluarga->kecamatan }}"
-            placeholder="kecamatan" class="form-control" required>
+            placeholder="kecamatan" class="form-control" readonly>
           <div class="invalid-feedback">Masukkan kelurahan Kamu!!!</div>
         </div>
       </div>

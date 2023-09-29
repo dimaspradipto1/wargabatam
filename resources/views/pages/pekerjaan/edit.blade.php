@@ -10,7 +10,7 @@
       <h5 class="card-title">Form Tambah Warga</h5>
 
       <!-- General Form Elements -->
-      <form action="{{ route('pekerjaan.upodate',$pekerjaan->id) }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('pekerjaan.update',$pekerjaan->id) }}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
         <div class="row mb-3">

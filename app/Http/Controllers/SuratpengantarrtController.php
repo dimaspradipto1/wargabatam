@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Warga;
-use Barryvdh\DomPDF\PDF;
 use App\Models\Keperluan;
 use App\Models\Pekerjaan;
 use App\Models\Pendidikan;
 use Illuminate\Http\Request;
 use App\Models\Kartukeluarga;
 use App\Models\Suratpengantarrt;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,31 +22,14 @@ class SuratpengantarrtController extends Controller
     public function index(Keperluan $keperluan, Pekerjaan $pekerjaan, Pendidikan $pendidikan, Kartukeluarga $kartukeluarga, Warga $warga, Suratpengantarrt $suratpengantarrt)
     {
        
-        $suratpengantarrt = Auth::user()->role == 'admin' || Auth::user()->role == 'rt' ? Suratpengantarrt::all() : Suratpengantarrt::with('warga.suratpengantarrt')->where('warga_nama', Auth::user()->name)->get();
 
-
-        // $suratpengantarrt = Auth::user()->role == 'admin' || Auth::user()->role == 'rt'
-        // ? Suratpengantarrt::all()
-        // : Suratpengantarrt::join('wargas', 'suratpengantarrts.warga_id', '=', 'wargas.id')
-        // ->select('suratpengantarrts.*', 'wargas.id')
-        // ->where('suratpengantarrts.warga_id', '=', 'wargas.id')
-        // ->orderBy('created_at', 'desc')
-        // ->get();
-
-
-
-        // $suratpengantarrt = Auth::user()->role == 'admin' || Auth::user()->role == 'rt' ? Suratpengantarrt::all() : DB::table('suratpengantarrts')->select('suratpengantarrts.*', 'wargas.id')->leftJoin('suratpengantarrts.warga_id', '=', 'wargas.id')->where('suratpengantarrts.warga_id', '=', 'wargas.id')->orderBy("created_at",  "desc")->get();
-
-
-        // DB::table('suratpengantarrts')->select('suratpengantarrts.*', 'wargas.id')->leftjoin('suratpengantarrts.warga_id', '=', 'wargas.id')->where('suratpengantarrts.warga_id', '=', 'wargas.id')->order("created_at",  "desc")->get();
-        
-        
-        // DB::table('suratpengantarrts')->select('suratpengantarrts.*', 'wargas.id')->join('suratpengantarrts.id', '=', 'wargas.id')->where('suratpengantarrts.warga_id', '=', 'wargas.id')->get();
-
-  
-        // $suratpengantarrt = Auth::user()->role == 'admin' || Auth::user()->role == 'rt' ? Suratpengantarrt::all() : Suratpengantarrt::where('warga_id', Auth::user()->role == 'warga')->get();
-
-
+        $suratpengantarrt =  
+        Auth::user()->role == 'admin' || Auth::user()->role == 'rt' ? suratpengantarrt::all() :
+        Suratpengantarrt::join('wargas','warga_id', '=', 'suratpengantarrts.warga_id')
+        ->select('suratpengantarrts.*', 'wargas.id')
+        ->where('warga_nama', Auth::user()->name)
+        ->get();
+    
 
         $data=[
             'title'=>'DATA SURAT PENGANTAR RT',
@@ -153,7 +134,7 @@ class SuratpengantarrtController extends Controller
     {
         $suratpengantarrt->delete();
         alert()->success('Sukses','Data Berhasil Dihapus.')->showConfirmButton('Ok', '#218838')->autoClose(2000);
-        return redirect()->route('pages.suratpengantarrt.index');
+        return redirect()->route('suratpengantarrt.index');
     }
 
     /**

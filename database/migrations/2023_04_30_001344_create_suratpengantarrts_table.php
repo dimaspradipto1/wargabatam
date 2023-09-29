@@ -15,9 +15,9 @@ class CreateSuratpengantarrtsTable extends Migration
     {
         Schema::create('suratpengantarrts', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('no_surat');
-            $table->string('nama_rt');
-            $table->string('nama_rw');
+            $table->string('no_surat')->nullable();
+            $table->string('nama_rt')->nullable();
+            $table->string('nama_rw')->nullable();
             $table->bigInteger('warga_id');
             $table->string('warga_nama');
             $table->bigInteger('keperluan_id');

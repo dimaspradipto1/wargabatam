@@ -15,10 +15,13 @@ class KartukeluargaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Anggota $anggota)
+    public function index()
     {
+        // $tes =Anggota::where('kartukeluarga_id', Kartukeluarga::first()->id)->get();
+        // || Anggota::where('kartukeluarga_id', Kartukeluarga::first()->id)->get()
+        
+        // dd($tes);
         $kartukeluarga = Auth::user()->role == 'admin'  || Auth::user()->role == 'rt' ? Kartukeluarga::all() : Kartukeluarga::where('kepala_keluarga', Auth::user()->name)->get();
-
        
         $anggota = Anggota::all();
 

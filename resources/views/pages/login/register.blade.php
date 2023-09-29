@@ -37,16 +37,14 @@
                   <div class="invalid-feedback">Silahkan, Masukkan Email Kamu!</div>
                 </div>
 
-                <div class="col-12">
+                {{-- <div class="col-12">
                   <label for="yourEmail" class="form-label">Status</label>
                   <select name="role" class="form-select">
                     <option selected>-- pilih status --</option>
-                    {{-- <option value="admin">admin</option> --}}
                     <option value="warga">warga</option>
-                    {{-- <option value="rt">rt</option> --}}
                   </select>
                   <div class="invalid-feedback">Silahkan, Pilih Role!</div>
-                </div>
+                </div> --}}
 
                 <div class="col-12">
                   <label for="yourPassword" class="form-label">Password</label>
